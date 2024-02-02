@@ -13,7 +13,7 @@ requirement = st.text_area("Write your app requirement", placeholder="Write you 
 
 # Function to send requirement to the backend and listen for response
 def post_requirement(requirement):
-    url = "http://localhost:3000/estimation/generate-srs"
+    url = "http://3.89.90.148:3000/estimation/generate-srs"
     headers = {"Content-Type": "application/json"}
     # Modify the data to include the user's requirement instead of fixed text
     data = json.dumps({"requirement": requirement})
@@ -33,3 +33,5 @@ if st.button('Submit'):
             st.markdown(response_data['data']['srs'])
     else:
         st.warning('Please write your app requirement before submitting.')
+
+
